@@ -14,7 +14,7 @@ function getAllFilesOfType(directory, type) {
   return filesOfType;
 }
 
-const { GITHUB_WORKSPACE, JSON_PATH } = process.env;
+const { GITHUB_WORKSPACE, JSON_PATH = "compatibility.json" } = process.env;
 
 const jsonFiles = getAllFilesOfType(GITHUB_WORKSPACE, ".test.json");
 const mergedJson = jsonFiles.reduce((merged, file) => {
