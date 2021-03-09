@@ -1,8 +1,8 @@
 const fs = require("fs");
 const path = require("path");
-const glob = require("glob");
+// const glob = require("glob");
 
-console.info(path.join(GITHUB_WORKSPACE, "**", JSON_EXT + ".json"));
+// console.info(path.join(GITHUB_WORKSPACE, "**", JSON_EXT + ".json"));
 // console.info(await glob(path.join(GITHUB_WORKSPACE, "**", JSON_EXT + ".json")));
 
 function getAllFilesOfType(directory, type) {
