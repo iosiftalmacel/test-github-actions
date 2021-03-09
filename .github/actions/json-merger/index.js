@@ -15,14 +15,13 @@ function getAllFilesOfType(directory, type) {
 }
 
 const { GITHUB_WORKSPACE, JSON_PATH } = process.env;
+
 const jsonFiles = getAllFilesOfType(GITHUB_WORKSPACE, ".test.json");
-
-const mergedJson = [];
-jsonFiles.forEach((file) => {
-  console.info(file);
+const mergedJson = jsonFiles.reduce((merged, file) => {
   const json = JSON.parse(fs.readFileSync(file));
-  if (Array.isArray(json)) mergedJson.push(...json);
-  else mergedJson.push(json);
-});
 
-console.info(JSON_PATH);
+  if (Array.isArray(json)) merged.push(...json);
+  else merged.push(json);
+}, []);
+
+fs.writeFile(GITHUB_WORKSPACE + JSON_PATH, JSON.stringify(mergedJson));
