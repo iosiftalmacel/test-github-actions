@@ -9,13 +9,17 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v1
-      - name: Merge all json files
-        id: "merge"
+
+      - name: Merge
+        description: Merge all compatibility json files
         uses: ./.github/actions/json-merger
-    # steps:
-    # - uses: actions/checkout@v2
-    # - name: Use Node.js ${{ matrix.node-version }}
-    #   uses: actions/setup-node@v1
-    #   with:
-    #     node-version: ${{ matrix.node-version }}
-    # - run: npm run upload-compatibility-json
+
+      - name: Upload S3
+        description: Upload merged compatibility json to S3
+        uses: shallwefootball/s3-upload-action@master
+        with:
+          aws_key_id: ${{ secrets.AWS_KEY_ID }}
+          aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
+          aws_bucket: ${{ secrets.AWS_BUCKET }}
+          source_dir: ${{ env.JSON_PATH }}
+          destination_dir: test/compatibility.json

@@ -1,10 +1,32 @@
 [
   {
-    "name": "test/composer/json",
-    "license": "hahaha2"
+    "test_name": "DOTween/BaseApiTest",
+    "pretty_name": "DOTween",
+    "is_supported": true,
+    "keywords": ["DOTween", "Demigiant", "HOTween", "DG", "Tweening", "Tween"],
+    "namespace": "DG.Tweening",
+    "class_names": ["DOTween", "Tweener"],
+    "docs_url": "https://docs.lunalabs.io/docs/playable/code/unity-plugins/dotween/",
+    "canny_url": null,
+    "luna_version_supported_from": "1.0.0",
+    "description": "Luna automatically handles the usage of the DOTween dll in your project. Therefore, no further actions are required to use DOTween in your playable ad.",
+    "workaround": null,
+    "is_unity_feature": false,
+    "type": "animation"
   },
   {
-    "name": "test/composer/json",
-    "license": "hahaha"
+    "test_name": "DOTween/BaseApiTest",
+    "pretty_name": "DOTween",
+    "is_supported": true,
+    "keywords": ["DOTween", "Demigiant", "HOTween", "DG", "Tweening", "Tween"],
+    "namespace": "DG.Tweening",
+    "class_names": ["DOTween", "Tweener"],
+    "docs_url": "https://docs.lunalabs.io/docs/playable/code/unity-plugins/dotween/",
+    "canny_url": null,
+    "luna_version_supported_from": "1.0.0",
+    "description": "Luna automatically handles the usage of the DOTween dll in your project. Therefore, no further actions are required to use DOTween in your playable ad.",
+    "workaround": null,
+    "is_unity_feature": false,
+    "type": "animation"
   }
 ]
