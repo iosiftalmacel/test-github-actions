@@ -30,5 +30,5 @@ fs.writeFileSync(
   JSON.stringify(mergedJson)
 );
 
-console.warn(GITHUB_WORKSPACE + JSON_PATH);
-console.info(JSON.parse(fs.readFileSync(GITHUB_WORKSPACE + JSON_PATH)));
+console.warn(GITHUB_WORKSPACE + "/" + JSON_PATH);
+console.info(JSON.parse(fs.readFileSync(GITHUB_WORKSPACE + "/" + JSON_PATH)));
