@@ -17,6 +17,8 @@ try {
         });
     });
 
+
+    console.log(workspace, repo_name, root);
     
 
 } catch (error) {
