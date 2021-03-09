@@ -1,0 +1,35 @@
+{
+  "javascript.validate.enable": true,
+  "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.insertSpaces": true,
+  "explorer.compactFolders": false,
+  "editor.detectIndentation": false,
+  "files.exclude": {
+    "**/*.git": true,
+    "**/*.expo": true,
+    //   ".*": true,
+    "**/*.DS_Store": true,
+    "node_modules/": true
+  },
+  "todohighlight.keywords": [
+    "DEBUG:",
+    "REVIEW:",
+    {
+      "text": "GROUP:",
+      "backgroundColor": "#0099cc",
+      "color": "#ffffff",
+      "isWholeLine": true
+    }
+  ],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "cSpell.words": [
+    "Rigidbody",
+    "titleize"
+  ]
+}

@@ -1,15 +1,17 @@
 on: [push]
 
 jobs:
-  merge_json_job:
+  upload-compatibility:
     runs-on: ubuntu-latest
     name: Merges all json files into a single one
+    env:
+      JSON_PATH: /compatibility.json
     steps:
-    - name: Checkout
-      uses: actions/checkout@v1
-    - name: Merge all json files
-      id: "merge"
-      uses: ./.github/actions/json-merger
+      - name: Checkout
+        uses: actions/checkout@v1
+      - name: Merge all json files
+        id: "merge"
+        uses: ./.github/actions/json-merger
     # steps:
     # - uses: actions/checkout@v2
     # - name: Use Node.js ${{ matrix.node-version }}

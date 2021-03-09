@@ -1,7 +1,6 @@
 {
   "name": "json-merger",
   "version": "1.0.0",
-  "description": "\"# test-github-actions\"",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -10,5 +9,4 @@
     "build": "node src/build.js",
     "upload-compatibility-json": "node upload-compatibility-json.js"
   }
-
 }
