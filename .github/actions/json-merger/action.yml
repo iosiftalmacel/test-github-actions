@@ -1,0 +1,11 @@
+name: 'Adds a file repository in composer.json'
+description: 'Adds (or replaces!) the `repositories` key in composer.json. Adds a file repo at provided relative path.'
+inputs: 
+  runner_context:
+    description: 'The runner'
+    required: true
+    default: ${{ toJson(runner) }} 
+  
+runs:
+  using: 'node12'
+  main: 'index.js'
