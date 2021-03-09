@@ -11,14 +11,16 @@ try {
         fs.readFileSync(composer_path)
     );
 
-    fs.readdir("/", (err, files) => {
-        files.forEach(file => {
-          console.log(file);
-        });
-    });
+    // fs.readdir("/", (err, files) => {
+    //     files.forEach(file => {
+    //       console.log(file);
+    //     });
+    // });
 
 
-    console.log(workspace, repo_name, root);
+    console.log(workspace);
+    console.log(repo_name);
+    console.log(root);
     
 
 } catch (error) {
