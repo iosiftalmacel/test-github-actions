@@ -1,0 +1,13 @@
+on: [push]
+
+jobs:
+  merge_json_job:
+    runs-on: ubuntu-latest
+    name: Merges all json files into a single one
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v1
+    - name: Merge all json files
+      id: "merge"
+      uses: ./.github/actions/json-merger
+

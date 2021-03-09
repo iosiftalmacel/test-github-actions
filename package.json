@@ -1,0 +1,13 @@
+{
+  "name": "test-github-actions",
+  "version": "1.0.0",
+  "description": "\"# test-github-actions\"",
+  "main": "json_merger.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  }
+}
