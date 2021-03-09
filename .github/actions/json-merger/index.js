@@ -25,4 +25,4 @@ const mergedJson = jsonFiles.reduce((merged, file) => {
   return merged;
 }, []);
 
-fs.writeFile(GITHUB_WORKSPACE + JSON_PATH, JSON.stringify(mergedJson));
+fs.writeFileSync(GITHUB_WORKSPACE + JSON_PATH, JSON.stringify(mergedJson));
