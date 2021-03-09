@@ -1,3 +1,5 @@
+name: Compatibility JSON
+
 on:
   push:
     branches:
