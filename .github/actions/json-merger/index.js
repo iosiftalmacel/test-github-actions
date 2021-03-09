@@ -14,8 +14,8 @@ function getAllFilesOfType(directory, type) {
   return filesOfType;
 }
 
-const rootDirectory = path.join(__dirname, "../../../");
-const jsonFiles = getAllFilesOfType(rootDirectory, ".test.json");
+const { GITHUB_WORKSPACE, JSON_PATH } = process.env;
+const jsonFiles = getAllFilesOfType(GITHUB_WORKSPACE, ".test.json");
 
 const mergedJson = [];
 jsonFiles.forEach((file) => {
@@ -25,5 +25,4 @@ jsonFiles.forEach((file) => {
   else mergedJson.push(json);
 });
 
-console.info(process.env);
-console.info(mergedJson);
+console.info(JSON_PATH);
