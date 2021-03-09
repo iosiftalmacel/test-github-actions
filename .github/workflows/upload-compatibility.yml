@@ -22,11 +22,11 @@ jobs:
       #     destination_dir: test/compatibility.json
 
       - name: Upload S3
-        uses: mostlytyped/s3-put-action@v1.0.0
+        uses: jonfriesen/s3-put-action@v1.0.0
         with:
           args: --acl-public
         env:
-          FILE: compatibility.json
+          LOCAL_FILE: compatibility.json
           REMOTE_FILE: test/compatibility.json
           AWS_ENDPOINT: s3.us-east-2.amazonaws.com
           AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
