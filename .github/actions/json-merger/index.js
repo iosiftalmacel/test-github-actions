@@ -29,5 +29,3 @@ fs.writeFileSync(
   GITHUB_WORKSPACE + "/" + JSON_PATH,
   JSON.stringify(mergedJson)
 );
-
-console.info(mergedJson);
