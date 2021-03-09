@@ -22,6 +22,7 @@ const mergedJson = jsonFiles.reduce((merged, file) => {
 
   if (Array.isArray(json)) merged.push(...json);
   else merged.push(json);
+  return merged;
 }, []);
 
 fs.writeFile(GITHUB_WORKSPACE + JSON_PATH, JSON.stringify(mergedJson));

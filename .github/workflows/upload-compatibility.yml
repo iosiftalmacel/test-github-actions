@@ -4,7 +4,6 @@ jobs:
   upload-compatibility:
     runs-on: ubuntu-latest
     name: Compatibility JSON
-    description: Creates and uploads compatibility JSON to S3
     env:
       JSON_PATH: /compatibility.json
     steps:
