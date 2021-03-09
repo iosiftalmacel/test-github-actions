@@ -1,0 +1,14 @@
+{
+  "name": "json-merger",
+  "version": "1.0.0",
+  "description": "\"# test-github-actions\"",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "start": "node src/watch.js",
+    "build": "node src/build.js",
+    "upload-compatibility-json": "node upload-compatibility-json.js"
+  }
+
+}
