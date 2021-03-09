@@ -4,6 +4,10 @@ jobs:
   upload-compatibility:
     runs-on: ubuntu-latest
     name: Compatibility JSON
+    env:
+      JSON_EXT: compat
+      JSON_PATH: compatibility.json
+      JSON_REMOTE_PATH: test/compatibility.json
 
     steps:
       - name: Checkout
@@ -12,22 +16,13 @@ jobs:
       - name: Merge
         uses: ./.github/actions/json-merger
 
-      # - name: Upload S3
-      #   uses: shallwefootball/s3-upload-action@master
-      #   with:
-      #     aws_key_id: ${{ secrets.AWS_KEY_ID }}
-      #     aws_secret_access_key: ${{ secrets.AWS_SECRET_ACCESS_KEY}}
-      #     aws_bucket: ${{ secrets.AWS_BUCKET }}
-      #     source_dir: ${{ env.JSON_PATH }}
-      #     destination_dir: test/compatibility.json
-
       - name: Upload S3
         uses: mostlytyped/s3-put-action@v1.0.0
         with:
           args: --acl-public
         env:
-          LOCAL_FILE: compatibility.json
-          REMOTE_FILE: test/compatibility.json
+          LOCAL_FILE: ${{ env.JSON_PATH }}
+          REMOTE_FILE: ${{ env.JSON_REMOTE_PATH }}
           AWS_ENDPOINT: s3.us-east-2.amazonaws.com
           AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_KEY_ID }}

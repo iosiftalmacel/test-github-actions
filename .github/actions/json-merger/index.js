@@ -14,9 +14,9 @@ function getAllFilesOfType(directory, type) {
   return filesOfType;
 }
 
-const { GITHUB_WORKSPACE, JSON_PATH = "compatibility.json" } = process.env;
+const { GITHUB_WORKSPACE, JSON_PATH, JSON_EXT } = process.env;
 
-const jsonFiles = getAllFilesOfType(GITHUB_WORKSPACE, ".test.json");
+const jsonFiles = getAllFilesOfType(GITHUB_WORKSPACE, `${JSON_EXT}.json`);
 const mergedJson = jsonFiles.reduce((merged, file) => {
   const json = JSON.parse(fs.readFileSync(file));
 
@@ -30,5 +30,4 @@ fs.writeFileSync(
   JSON.stringify(mergedJson)
 );
 
-console.warn(GITHUB_WORKSPACE + "/" + JSON_PATH);
-console.info(JSON.parse(fs.readFileSync(GITHUB_WORKSPACE + "/" + JSON_PATH)));
+console.info(mergedJson);

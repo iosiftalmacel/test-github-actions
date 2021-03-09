@@ -1,6 +1,5 @@
 name: "Merge JSON"
 description: "Merges JSON files"
-
 runs:
   using: "node12"
   main: "index.js"
