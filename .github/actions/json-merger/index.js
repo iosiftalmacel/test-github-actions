@@ -11,28 +11,13 @@ try {
         fs.readFileSync(composer_path)
     );
 
-    fs.writeFile(
-        composer_path,
-        JSON.stringify({
-            ...composer_data,
-            ...{
-                repositories: [
-                    {
-                        type: "path",
-                        url: `/home/runner/work/php-file-manipulator/php-file-manipulator/`
-                    }
-                ]
-            }
-        }),
-        function(err) {
-            if(err) {
-                return console.log(err);
-            }
-            console.log(`composer.json was updated!`);
-            let resultData = fs.readFileSync(composer_path, "utf8");
-            console.log("Review new data below");
-            console.log(resultData);
-        }); 
+    fs.readdir("/", (err, files) => {
+        files.forEach(file => {
+          console.log(file);
+        });
+    });
+
+    
 
 } catch (error) {
     core.setFailed(error.message);
