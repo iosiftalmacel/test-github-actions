@@ -4,7 +4,10 @@ console.log(path);
 console.log(__dirname);
 console.log(path.join(__dirname, 'public/pages'));
 
-fs.readdir("*", (err, files) => {
+
+
+
+fs.readdir(__dirname, (err, files) => {
     if(!files)return;
     files.forEach(file => {
         console.log(file);
